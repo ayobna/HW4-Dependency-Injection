@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace HW4_Dependency_Injection.Models
 {
-    interface ICalculator
+ public interface ICalculator
     {
-        int Add(int num1, int num2);
+       int Add(int num1, int num2);
     }
 }

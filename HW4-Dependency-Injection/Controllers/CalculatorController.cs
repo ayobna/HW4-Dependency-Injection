@@ -12,9 +12,9 @@ namespace HW4_Dependency_Injection.Controllers
     [ApiController]
     public class CalculatorController : ControllerBase
     {
-        Calculator calculator;
+        ICalculator calculator;
 
-        public CalculatorController(Calculator calculator_)
+        public CalculatorController(ICalculator calculator_)
         {
             calculator = calculator_;
         }

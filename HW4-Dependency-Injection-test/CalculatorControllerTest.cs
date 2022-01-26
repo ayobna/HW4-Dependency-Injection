@@ -13,12 +13,10 @@ namespace HW4_Dependency_Injection_test
         [DataTestMethod]
         public void CalculatorResult_ReturnResultSumOfTwoNumbers_SumResult(int num1,int num2,int result)
         {
-            Mock<Calculator> chk = new Mock<Calculator>();
-            
-
-             CalculatorController cc = new CalculatorController(chk.Object);
-
-            Assert.AreEqual(result, cc.CalculatorResult(num1, num2));
+            Mock<ICalculator> chk = new Mock<ICalculator>();
+          chk.Setup(m => m.Add(num1, num2)).Returns(num1+num2);
+            CalculatorController cc = new CalculatorController(chk.Object);
+            Assert.AreEqual(result, cc.CalculatorResult(num1,num2));
         }
     }
 }

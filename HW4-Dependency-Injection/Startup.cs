@@ -24,7 +24,7 @@ namespace HW4_Dependency_Injection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSwaggerGen();
-            services.Add(new ServiceDescriptor(typeof(Calculator), new Calculator()));
+            services.Add(new ServiceDescriptor(typeof(ICalculator), new Calculator()));
 
             services.AddControllersWithViews();
         }
